@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-mailwizz": "^1.1.5"
+  }
+}
