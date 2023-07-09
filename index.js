@@ -7,13 +7,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.raw());
 const PORT = process.env.PORT || 3030;
 
-app.get("/", (req, res) => {
-    res.send('Success')
-});
+const config = {
+    publicKey: "publicKey",
+    secret: "secretKey",
+    baseUrl: "yourMailwizzApiUrl"
+};
+
+const subscribers = new mailWizz.ListSubscribers(config);
 
 app.post("/", (req,rest) => {
-    console.log('Got body:', req.body);
-    console.log('Gots body:', rest.body);
+    var userInfo = {
+    EMAIL: "contact@mikelcalvo.net",
+    FNAME: "Mikel",
+    LNAME: "Calvo"
+};
+    console.log('Got body:', req.body.name_1:);
     rest.sendStatus(200);
 })
 
