@@ -11,6 +11,7 @@ app.get("/", (req, res) => {
 
 app.post("/", (req,rest) => {
     console.log('Got body:', req.body);
+    console.log('Gots body:', rest.body);
     rest.sendStatus(200);
 })
 
