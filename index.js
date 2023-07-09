@@ -17,11 +17,16 @@ const subscribers = new mailWizz.ListSubscribers(config);
 
 app.post("/", (req,rest) => {
     var userInfo = {
-    EMAIL: "contact@mikelcalvo.net",
-    FNAME: "Mikel",
-    LNAME: "Calvo"
+    EMAIL: req.body.email_1,
+    FNAME: req.body.name_1
 };
-    console.log('Got body:', req.body.name_1);
+subscribers.create("gp650yk29ha5f", userInfo)
+    .then(function(result) {
+        console.log("Added it");
+    })
+    .catch(function(err) {
+        console.log("Error");
+    });
     rest.sendStatus(200);
 })
 
