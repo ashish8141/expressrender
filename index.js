@@ -21,7 +21,7 @@ app.post("/", (req,rest) => {
     FNAME: "Mikel",
     LNAME: "Calvo"
 };
-    console.log('Got body:', req.body.name_1:);
+    console.log('Got body:', req.body.name_1);
     rest.sendStatus(200);
 })
 
