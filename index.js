@@ -16,6 +16,7 @@ const config = {
 const subscribers = new mailWizz.ListSubscribers(config);
 
 app.post("/", (req,rest) => {
+    console.log(req.body);
     var userInfo = {
     EMAIL: req.body.email_1,
     FNAME: req.body.name_1
@@ -28,6 +29,10 @@ subscribers.create("gp650yk29ha5f", userInfo)
         console.log("Error");
     });
     rest.sendStatus(200);
+})
+
+app.get("/",(req,res)=>{
+    res.send("Server is working. Thanks for connecting.")
 })
 
 app.listen(PORT, () => console.log("Server listening on port 3000!"));
