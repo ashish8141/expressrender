@@ -8,9 +8,9 @@ app.use(bodyParser.raw());
 const PORT = process.env.PORT || 3030;
 
 const config = {
-    publicKey: "publicKey",
-    secret: "secretKey",
-    baseUrl: "yourMailwizzApiUrl"
+    publicKey: "e71d5a78921af0a0e6cf740f17cf23bb10082fab",
+    secret: "e71d5a78921af0a0e6cf740f17cf23bb10082fab",
+    baseUrl: "https://triviamastermind.net/mw/api/index.php"
 };
 
 const subscribers = new mailWizz.ListSubscribers(config);
